@@ -53,12 +53,17 @@ h2 {
     font-weight: bolder;
 }
 
+
 .nav-button:hover {
     color: var(--nav-button-hover-color);
 }
 
 .active {
     color: var(--nav-button-active-color);
+}
+
+.active:hover {
+    color: var(--nav-button-active-color) !important;
 }
 
 .content {
@@ -73,10 +78,7 @@ h2 {
 }
 
 .logo {
-    width: 50%;
-}
-
-.logo:hover {
+    width: 48%;
     animation-name: grow;
     animation-iteration-count: 1;
     animation-duration: 2s;
@@ -113,6 +115,6 @@ h2 {
 
 @keyframes grow {
     100% {
-        width: 52%;
+        width: 50%;
     }
 }
