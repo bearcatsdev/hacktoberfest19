@@ -1,0 +1,54 @@
+* {
+    --background-color: #152347;
+    --nav-button-hover-color: #eeeeee;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: var(--background-color);
+}
+
+header > nav {
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo:hover {
+    animation-name: shake;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.nav-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-button {
+    color: white;
+    text-decoration: none;
+    margin: 0 16px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.nav-button:hover {
+    color: var(--nav-button-hover-color);
+}
+
+/* keyframes */
+@keyframes shake {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: 4px;
+    }
+}
