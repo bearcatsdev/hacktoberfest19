@@ -1,6 +1,5 @@
 module.exports = (app) => {
     app.get('', (req, res) => {
-        // TODO change
-        res.send('Mai Pren');
+        res.sendFile(__dirname + '/public/index.html');
     });
 };
