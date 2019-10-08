@@ -22,6 +22,9 @@ header > nav {
 
 main {
     margin: 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hacktoberfest:hover {
