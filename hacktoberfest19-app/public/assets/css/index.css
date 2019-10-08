@@ -38,24 +38,6 @@ main > article {
     animation-direction: alternate;
 }
 
-.nav-button-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.nav-button {
-    color: white;
-    text-decoration: none;
-    margin: 0 16px;
-    font-size: 1.2rem;
-    font-weight: bolder;
-}
-
-.nav-button:hover {
-    color: var(--nav-button-hover-color);
-}
-
 .active {
     color: var(--nav-button-active-color);
 }
@@ -161,6 +143,24 @@ main > article {
 
     .lg-break {
         display: block;
+    }
+
+    .nav-button-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-button {
+        color: white;
+        text-decoration: none;
+        margin: 0 16px;
+        font-size: 1.2rem;
+        font-weight: bolder;
+    }
+
+    .nav-button:hover {
+        color: var(--nav-button-hover-color);
     }
 }
 
