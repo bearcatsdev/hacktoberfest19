@@ -79,7 +79,7 @@ main {
     display: inline-block;
 }
 
-@media only screen and (max-width: 737px) {
+@media (max-width: 737px) {
 
     h1 {
         font-size: 2.5rem;
@@ -121,7 +121,7 @@ main {
     }
 }
 
-@media only screen and (min-width: 738px) {
+@media (min-width: 738px) {
 
     h1 {
         font-size: 3rem;
