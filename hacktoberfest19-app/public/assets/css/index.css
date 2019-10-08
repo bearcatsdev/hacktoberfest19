@@ -21,15 +21,7 @@ header > nav {
 }
 
 main {
-    margin: 80px;
-}
-
-h1 {
-    font-size: 3rem;
-}
-
-h2 {
-    font-size: 1.75rem;
+    margin: 6%;
 }
 
 .hacktoberfest:hover {
@@ -53,7 +45,6 @@ h2 {
     font-weight: bolder;
 }
 
-
 .nav-button:hover {
     color: var(--nav-button-hover-color);
 }
@@ -66,23 +57,8 @@ h2 {
     color: var(--nav-button-active-color) !important;
 }
 
-.content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .yellow {
     color: yellow;
-}
-
-.logo {
-    width: 48%;
-    animation-name: grow;
-    animation-iteration-count: 1;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
 }
 
 .mono {
@@ -103,6 +79,80 @@ h2 {
     display: inline-block;
 }
 
+@media only screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        width: 50%;
+        animation-name: grow;
+        animation-iteration-count: 1;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+
+    .content-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text-center-sm {
+        text-align: center;
+    }
+
+    .lg-break {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        width: 50%;
+    }
+
+    .content-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .lg-break {
+        display: block;
+    }
+}
+
 /* keyframes */
 @keyframes shake {
     0% {
@@ -115,6 +165,6 @@ h2 {
 
 @keyframes grow {
     100% {
-        width: 50%;
+        width: 90%;
     }
 }
