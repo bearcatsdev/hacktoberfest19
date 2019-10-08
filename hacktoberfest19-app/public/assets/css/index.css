@@ -13,7 +13,7 @@ body {
 }
 
 header > nav {
-    padding: 16px;
+    padding: 2%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -21,10 +21,14 @@ header > nav {
 }
 
 main {
-    margin: 6%;
+    padding: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+main > article {
+    width: 100%;
 }
 
 .hacktoberfest:hover {
@@ -69,7 +73,7 @@ main {
 }
 
 .sm-margin {
-    margin: 8px;
+    margin: 1%;
 }
 
 .highlight {
@@ -93,7 +97,6 @@ main {
     }
 
     .content {
-        width: 100%;
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
