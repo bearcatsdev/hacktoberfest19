@@ -21,7 +21,6 @@ header > nav {
 }
 
 main {
-    width: 88%;
     margin: 6%;
 }
 
@@ -91,6 +90,7 @@ main {
     }
 
     .content {
+        width: 100%;
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
