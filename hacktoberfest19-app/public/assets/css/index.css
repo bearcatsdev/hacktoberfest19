@@ -31,6 +31,12 @@ main > article {
     width: 100%;
 }
 
+hr {
+    margin: 5% 0;
+    width: 100%;
+    color: white;
+}
+
 .hacktoberfest:hover {
     animation-name: shake;
     animation-duration: 500ms;
@@ -66,6 +72,16 @@ main > article {
 
 .fit {
     display: inline-block;
+}
+
+.chevron {
+    cursor: pointer;
+    margin-top: 5%;
+    position: relative;
+    animation-name: up-and-down;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 @media (max-width: 737px) {
@@ -177,5 +193,14 @@ main > article {
 @keyframes grow {
     100% {
         width: 90%;
+    }
+}
+
+@keyframes up-and-down {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 1%;
     }
 }
