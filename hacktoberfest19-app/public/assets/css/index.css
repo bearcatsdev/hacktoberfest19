@@ -50,6 +50,10 @@ hr {
         font-size: 1rem;
     }
 
+    h3 {
+        font-size: 0.8rem;
+    }
+
     .content {
         display: flex;
         flex-direction: column-reverse;
@@ -83,6 +87,10 @@ hr {
     .nav-button-container {
         display: none;
     }
+
+    .img-headline {
+        width: 90%;
+    }
 }
 
 @media (min-width: 738px) {
@@ -93,6 +101,10 @@ hr {
 
     h2 {
         font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
     }
 
     .content {
@@ -133,6 +145,10 @@ hr {
 
     .nav-button:hover {
         color: var(--nav-button-hover-color);
+    }
+
+    .img-headline {
+        width: 50%;
     }
 }
 
@@ -201,6 +217,13 @@ hr {
 .btn-primary:hover {
     color: lightskyblue;
     border: 3px solid lightskyblue;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 /* keyframes */
