@@ -40,6 +40,15 @@ hr {
     color: white;
 }
 
+a {
+    text-decoration: none;
+    color: deepskyblue;
+}
+
+a:hover {
+    color: var(--highlight-color);
+}
+
 @media (max-width: 737px) {
 
     h1 {
@@ -61,6 +70,20 @@ hr {
         align-items: center;
     }
 
+    .content-secondary {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-secondary-reverse {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
     .logo {
         width: 50%;
         animation-name: grow;
@@ -70,6 +93,13 @@ hr {
     }
 
     .content-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-details-secondary {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -90,6 +120,14 @@ hr {
 
     .img-headline {
         width: 90%;
+    }
+
+    .img-secondary {
+        width: 90%;
+    }
+
+    .one-point-five {
+        line-height: 24px;
     }
 }
 
@@ -114,6 +152,20 @@ hr {
         align-items: center;
     }
 
+    .content-secondary {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .content-secondary-reverse {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        align-items: center;
+    }
+
     .logo {
         width: 50%;
     }
@@ -122,6 +174,14 @@ hr {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: flex-start;
+    }
+
+    .content-details-secondary {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: flex-start;
     }
 
@@ -148,7 +208,15 @@ hr {
     }
 
     .img-headline {
-        width: 50%;
+        width: 40%;
+    }
+
+    .img-secondary {
+        width: 40%;
+    }
+
+    .one-point-five {
+        line-height: 32px;
     }
 }
 
@@ -157,6 +225,10 @@ hr {
     animation-duration: 500ms;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .active {
@@ -181,6 +253,22 @@ hr {
 
 .md-margin-top {
     margin-top: 32px;
+}
+
+.md-margin-bottom {
+    margin-bottom: 32px;
+}
+
+.sm-margin-top {
+    margin-top: 4px;
+}
+
+.lg-margin-top {
+    margin-top: 56px;
+}
+
+.xl-margin-top {
+    margin-top: 80px;
 }
 
 .highlight {
