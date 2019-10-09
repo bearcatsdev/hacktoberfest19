@@ -351,3 +351,25 @@ a:hover {
         top: 1%;
     }
 }
+
+/* Map Popup Styling */
+.custom-popup{
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  font-size: 0.9rem;
+}
+.custom-popup .leaflet-popup-content-wrapper .leaflet-popup-content{
+  width: 360px!important;
+}
+.custom-popup h1, .custom-popup h2, .custom-popup h3, .custom-popup h4, .custom-popup h5, .custom-popup h6{
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+}
+.custom-popup ul li a{
+  color: yellow;
+}
+.custom-popup .leaflet-popup-tip,
+.custom-popup .leaflet-popup-content-wrapper{
+    background: #9c27b0;
+    color: #ffffff;
+}
