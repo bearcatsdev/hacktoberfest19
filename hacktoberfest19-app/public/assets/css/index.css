@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
+
 * {
     --background-color: #152347;
     --nav-button-hover-color: #eeeeee;
@@ -37,53 +40,6 @@ hr {
     color: white;
 }
 
-.hacktoberfest:hover {
-    animation-name: shake;
-    animation-duration: 500ms;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-.active {
-    color: var(--nav-button-active-color);
-}
-
-.active:hover {
-    color: var(--nav-button-active-color) !important;
-}
-
-.yellow {
-    color: yellow;
-}
-
-.mono {
-    font-family: 'Space Mono', monospace;
-}
-
-.sm-margin {
-    margin: 1%;
-}
-
-.highlight {
-    padding: 4px;
-    background-color: var(--highlight-color);
-    color: gold;
-}
-
-.fit {
-    display: inline-block;
-}
-
-.chevron {
-    cursor: pointer;
-    margin-top: 5%;
-    position: relative;
-    animation-name: up-and-down;
-    animation-duration: 1s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-}
-
 @media (max-width: 737px) {
 
     h1 {
@@ -116,7 +72,7 @@ hr {
         align-items: center;
     }
 
-    .text-center-sm {
+    .sm-text-center {
         text-align: center;
     }
 
@@ -178,6 +134,73 @@ hr {
     .nav-button:hover {
         color: var(--nav-button-hover-color);
     }
+}
+
+.hacktoberfest:hover {
+    animation-name: shake;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.active {
+    color: var(--nav-button-active-color);
+}
+
+.active:hover {
+    color: var(--nav-button-active-color) !important;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.mono {
+    font-family: 'Space Mono', monospace;
+}
+
+.sm-margin {
+    margin: 4px;
+}
+
+.md-margin-top {
+    margin-top: 32px;
+}
+
+.highlight {
+    padding: 4px;
+    background-color: var(--highlight-color);
+    color: gold;
+}
+
+.fit {
+    display: inline-block;
+}
+
+.chevron {
+    cursor: pointer;
+    margin-top: 5%;
+    position: relative;
+    animation-name: up-and-down;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.btn-primary {
+    cursor: pointer;
+    padding: 12px 24px;
+    border: 3px solid yellow;
+    border-radius: 48px;
+    color: yellow;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+    font-size: 1.25rem;
+}
+
+.btn-primary:hover {
+    color: lightskyblue;
+    border: 3px solid lightskyblue;
 }
 
 /* keyframes */
