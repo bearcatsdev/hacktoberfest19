@@ -6,6 +6,7 @@
     --nav-button-hover-color: #eeeeee;
     --nav-button-active-color: #3f51b5;
     --highlight-color: #9c27b0;
+    --footer-color: #9fa09f;
 }
 
 body {
@@ -38,6 +39,18 @@ hr {
     margin: 5% 0;
     width: 100%;
     color: white;
+}
+
+footer {
+    width: 100%;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+small {
+    color: var(--footer-color);
 }
 
 a {
