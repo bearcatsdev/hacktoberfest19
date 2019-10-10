@@ -41,6 +41,10 @@ main > .content-secondary {
     font-family: 'Space Mono', monospace;
 }
 
+main > .content-secondary-reverse {
+    font-family: 'Space Mono', monospace;
+}
+
 main > article {
     width: 100%;
 }
@@ -74,7 +78,7 @@ a:hover {
     color: var(--highlight-color);
 }
 
-@media (max-width: 737px) {
+@media (max-width: 899px) {
 
     h1 {
         font-size: 2.5rem;
@@ -158,7 +162,7 @@ a:hover {
     }
 }
 
-@media (min-width: 738px) {
+@media (min-width: 900px) {
 
     h1 {
         font-size: 3rem;
