@@ -1,4 +1,4 @@
-var mymap = L.map('map').setView([-6.20042,106.78543], 19);
+var mymap = L.map('map', {fullscreenControl: true}).setView([-6.20042,106.78543], 19);
 var marker = L.marker([-6.20042,106.78543]).addTo(mymap);
 
 var mapdata = {
@@ -20,7 +20,7 @@ var mapdata = {
     {
       name: "GNOME Maps (App)",
       exclusives: ["Linux"],
-      url: "geo"
+      url: "geo:-6.20042,106.78543"
     },
     {
       name: "Google Maps (App/Web)",
