@@ -33,6 +33,7 @@ const mapData = {
     },
     {
       name: "Bing / Microsoft Maps (Web)",
+      exclusives: ["Linux", "MacOS", "Windows"],
       url: "https://www.bing.com/maps?osid=8cafe98a-1508-4903-8f7b-7be98e372a8c&cp=-6.199679~106.781877&lvl=16&imgid=44c7dd00-6637-47fd-b5f7-d4d95fd205f6&v=2&sV=2&form=S00027"
     },
     {
