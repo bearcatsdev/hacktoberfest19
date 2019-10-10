@@ -78,7 +78,7 @@ a:hover {
     color: var(--highlight-color);
 }
 
-@media (max-width: 899px) {
+@media (max-width: 900px) {
 
     h1 {
         font-size: 2.5rem;
@@ -160,9 +160,20 @@ a:hover {
     .one-point-five {
         line-height: 24px;
     }
+
+    .chevron {
+        cursor: pointer;
+        margin-top: 56px;
+        margin-bottom: 56px;
+        position: relative;
+        animation-name: up-and-down;
+        animation-duration: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 901px) {
 
     h1 {
         font-size: 3rem;
@@ -251,6 +262,16 @@ a:hover {
     .one-point-five {
         line-height: 32px;
     }
+
+    .chevron {
+        cursor: pointer;
+        margin-top: 16px;
+        position: relative;
+        animation-name: up-and-down;
+        animation-duration: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
 }
 
 .hacktoberfest:hover {
@@ -313,16 +334,6 @@ a:hover {
 
 .fit {
     display: inline-block;
-}
-
-.chevron {
-    cursor: pointer;
-    margin-top: 16px;
-    position: relative;
-    animation-name: up-and-down;
-    animation-duration: 2s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
 }
 
 .btn-primary {
