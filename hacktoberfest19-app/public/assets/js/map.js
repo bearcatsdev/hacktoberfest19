@@ -1,7 +1,7 @@
-var mymap = L.map('map', {fullscreenControl: true}).setView([-6.20042,106.78543], 19);
-var marker = L.marker([-6.20042,106.78543]).addTo(mymap);
+const myMap = L.map('map', {fullscreenControl: true}).setView([-6.20042,106.78543], 19);
+const marker = L.marker([-6.20042,106.78543]).addTo(myMap);
 
-var mapdata = {
+const mapData = {
   name: "BINUS UNIVERSITY, Syahdan Campus",
   address: "Jalan K.H. Syahdan No. 9, RT.6/RW.12, Kemanggisan, Palmerah, Jakarta Barat",
   lat: -6.20042,
@@ -57,25 +57,25 @@ var mapdata = {
 }
 
 
-marker.bindPopup(extractMapData(mapdata), {"className": "custom-popup"}).openPopup();
+marker.bindPopup(extractMapData(mapData), {"className": "custom-popup"}).openPopup();
 //geo:-6.20042,106.78543?z=19
 
 function extractMapData(obj){
-  var initstring = "<h3>" + obj.name + "</h3><p>" + obj.address + "</p>";
+  let initstring = "<h3>" + obj.name + "</h3><p>" + obj.address + "</p>";
   initstring += "<h4>Open With:</h4><ul>";
 
-  var i;
+  let i;
   for (i = 0; i < obj.maps.length; i++){
-    var url;
+    let url;
     if (obj.maps[i].name === "OpenStreetMap (Web)"){
       url = "https://www.openstreetmap.org/" + obj.maps[i].osmType + "/" + obj.maps[i].osmId;
     } else if (obj.maps[i].url === "geo"){
       url = "geo:" + obj.lat + "," + obj.long + "?z=19&q=" + obj.lat + "," + obj.long + "(" + encodeURIComponent(obj.name) + ")";
     } else {
       url = obj.maps[i].url;
-    };
+    }
     if(obj.maps[i].exclusives && obj.maps[i].exclusives.length > 0){
-      var j;
+      let j;
       for (j = 0; j < obj.maps[i].exclusives.length; j++){
         if (testUA(obj.maps[i].exclusives[j]) === true){
           initstring += appendList(obj.maps[i].name, url);
@@ -90,36 +90,31 @@ function extractMapData(obj){
 }
 
 function appendList(string, url){
-  var result = "<li><a href='" + url + "' target='_blank'>" + string + "</a></li>";
-  return result;
+  return "<li><a href='" + url + "' target='_blank'>" + string + "</a></li>";
 }
 
 function testUA(string){
-  var userAgent = window.navigator.userAgent;
-  var platform = window.navigator.platform;
-  var macosstrings = ['Macintosh', 'MacOS'];
-  var iosstrings = ['iPhone', 'iPad', 'iPod'];
-  var windowsstrings = ['Win32', 'Win64', 'Windows'];
-  var os;
-  if (macosstrings.indexOf(platform) !== -1) {
+  const userAgent = window.navigator.userAgent;
+  const platform = window.navigator.platform;
+  const macOSStrings = ['Macintosh', 'MacOS'];
+  const iOSStrings = ['iPhone', 'iPad', 'iPod'];
+  const WindowsStrings = ['Win32', 'Win64', 'Windows'];
+  let os;
+  if (macOSStrings.indexOf(platform) !== -1) {
     os = 'MacOS';
-  } else if (iosstrings.indexOf(platform) !== -1) {
+  } else if (iOSStrings.indexOf(platform) !== -1) {
     os = 'iOS';
-  } else if (windowsstrings.indexOf(platform) !== -1) {
+  } else if (WindowsStrings.indexOf(platform) !== -1) {
     os = 'Windows';
   } else if (/Android/.test(userAgent)) {
     os = 'Android';
   } else if (!os && /Linux/.test(platform)) {
     os = 'Linux';
   }
-  if (os === string){
-    return true;
-  } else {
-    return false;
-  }
+  return os === string ? true : false;
 }
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 19,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(mymap);
+}).addTo(myMap);
