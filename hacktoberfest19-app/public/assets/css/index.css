@@ -5,6 +5,7 @@
     --background-color: #152347;
     --nav-button-hover-color: #eeeeee;
     --nav-button-active-color: #3f51b5;
+    --button-hover-color: #334285;
     --highlight-color: #9c27b0;
     --footer-color: #9fa09f;
     --footer-bg-color: #11172d;
@@ -26,10 +27,22 @@ header > nav {
 }
 
 main {
-    padding: 5%;
+    padding: 0 5% 5% 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+main > .content {
+    font-family: 'Montserrat', sans-serif;
+}
+
+main > .content-secondary {
+    font-family: 'Space Mono', monospace;
+}
+
+main > .content-secondary-reverse {
+    font-family: 'Space Mono', monospace;
 }
 
 main > article {
@@ -51,7 +64,8 @@ footer {
     background-color: var(--footer-bg-color);
 }
 
-small {
+footer > small {
+    padding: 16px;
     color: var(--footer-color);
 }
 
@@ -64,7 +78,7 @@ a:hover {
     color: var(--highlight-color);
 }
 
-@media (max-width: 737px) {
+@media (max-width: 900px) {
 
     h1 {
         font-size: 2.5rem;
@@ -146,9 +160,20 @@ a:hover {
     .one-point-five {
         line-height: 24px;
     }
+
+    .chevron {
+        cursor: pointer;
+        margin-top: 56px;
+        margin-bottom: 56px;
+        position: relative;
+        animation-name: up-and-down;
+        animation-duration: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
 }
 
-@media (min-width: 738px) {
+@media (min-width: 901px) {
 
     h1 {
         font-size: 3rem;
@@ -237,6 +262,16 @@ a:hover {
     .one-point-five {
         line-height: 32px;
     }
+
+    .chevron {
+        cursor: pointer;
+        margin-top: 16px;
+        position: relative;
+        animation-name: up-and-down;
+        animation-duration: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
 }
 
 .hacktoberfest:hover {
@@ -301,30 +336,19 @@ a:hover {
     display: inline-block;
 }
 
-.chevron {
-    cursor: pointer;
-    margin-top: 5%;
-    position: relative;
-    animation-name: up-and-down;
-    animation-duration: 2s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-}
-
 .btn-primary {
     cursor: pointer;
     padding: 12px 24px;
-    border: 3px solid yellow;
-    border-radius: 48px;
-    color: yellow;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--nav-button-active-color);
+    color: white;
     font-family: 'Montserrat', sans-serif;
-    background-color: transparent;
     font-size: 1.25rem;
 }
 
 .btn-primary:hover {
-    color: lightskyblue;
-    border: 3px solid lightskyblue;
+    background-color: var(--button-hover-color);
 }
 
 .details {
