@@ -390,7 +390,7 @@ a:hover {
   font-size: 0.9rem;
 }
 .custom-popup .leaflet-popup-content-wrapper .leaflet-popup-content{
-  width: 360px!important;
+  /*width: 360px!important;*/
 }
 .custom-popup h1, .custom-popup h2, .custom-popup h3, .custom-popup h4, .custom-popup h5, .custom-popup h6{
   font-family: "Space Mono", monospace;
@@ -403,4 +403,39 @@ a:hover {
 .custom-popup .leaflet-popup-content-wrapper{
     background: #9c27b0;
     color: #ffffff;
+}
+
+.menutilecontainer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.menutile a p{
+  margin-top:0
+}
+.menutile{
+  width:33.333%;
+  text-align:center;
+  font-size:0.7rem;
+}
+.menutile a img{
+  width:100%;
+  height:auto;
+}
+.menutile a img.masked{
+  width:60%;
+  height:auto;
+  padding:20%;
+}
+.menutile:nth-child(n+4){
+  width:20%;
+  font-size:0.6rem;
+}
+.menutile:nth-child(n+4) a p{
+  display:none
+}
+.menutile:nth-child(n+4) a img.masked{
+  width:80%;
+  height:auto;
+  padding:10%;
 }
