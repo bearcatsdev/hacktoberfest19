@@ -389,14 +389,11 @@ a:hover {
   font-weight: bolder;
   font-size: 0.9rem;
 }
-.custom-popup .leaflet-popup-content-wrapper .leaflet-popup-content{
-  /*width: 360px!important;*/
-}
 .custom-popup h1, .custom-popup h2, .custom-popup h3, .custom-popup h4, .custom-popup h5, .custom-popup h6{
   font-family: "Space Mono", monospace;
   font-weight: bold;
 }
-.custom-popup ul li a{
+.custom-popup .leaflet-popup-content-wrapper .leaflet-popup-content h4 a{
   color: yellow;
 }
 .custom-popup .leaflet-popup-tip,
@@ -411,7 +408,8 @@ a:hover {
   flex-direction: row;
 }
 .menutile a p{
-  margin-top:0
+  margin-top:0;
+  font-family: "Montserrat", sans-serif;
 }
 .menutile{
   width:33.333%;
@@ -426,6 +424,23 @@ a:hover {
   width:60%;
   height:auto;
   padding:20%;
+}
+@media screen and (max-width:450px){
+  .custom-popup .leaflet-popup-content-wrapper .leaflet-popup-content{
+    width: 250px!important;
+  }
+  .menutile{
+    width:20%;
+    font-size:0.6rem;
+  }
+  .menutile a p{
+    display:none
+  }
+  .menutile a img.masked{
+    width:80%;
+    height:auto;
+    padding:10%;
+  }
 }
 .menutile:nth-child(n+4){
   width:20%;

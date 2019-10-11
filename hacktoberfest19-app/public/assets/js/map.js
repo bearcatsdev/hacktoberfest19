@@ -18,7 +18,15 @@ const mapData = {
   },
   maps: [
     {
-      name: "Windows Maps",
+      name: "Google Maps",
+      icon: "assets/images/maps/googlemaps.png",
+      mask: true,
+      background: "#f1f1f1",
+      color: "#000000",
+      url: "https://goo.gl/maps/xGM6bk5ZF1xuoQjx8"
+    },
+    {
+      name: "Win10 Maps",
       icon: "assets/images/maps/win10maps.jpg",
       mask: false,
       background: "#0078d7",
@@ -45,12 +53,13 @@ const mapData = {
       url: "geo:%lat,%long"
     },
     {
-      name: "Google Maps",
-      icon: "assets/images/maps/googlemaps.png",
+      name: "KDE Marble",
+      icon: "assets/images/maps/kdemarble.svg",
       mask: true,
-      background: "#f1f1f1",
+      background: "#ffffff",
       color: "#000000",
-      url: "https://goo.gl/maps/xGM6bk5ZF1xuoQjx8"
+      exclusives: ["Linux"],
+      url: "geo:%lat,%long?q=%name"
     },
     {
       name: "Waze",
@@ -59,6 +68,25 @@ const mapData = {
       background: "#62d2eb",
       color: "#486067",
       url: "https://waze.com/ul?q=%name&ll=%lat,%long"
+    },
+    {
+      name: "OpenStreetMap",
+      icon: "assets/images/maps/openstreetmap.png",
+      mask: true,
+      background: "#7092ff",
+      color: "#000000",
+      osmType: "way",
+      osmId: "153306200",
+      url: "https://www.openstreetmap.org/%osmtype/%osmid"
+    },
+    {
+      name: "OsmAnd",
+      icon: "assets/images/maps/osmand.png",
+      mask: false,
+      background: "#f0f0f0",
+      color: "#000000",
+      exclusives: ["Android", "iOS"],
+      url: "https://osmand.net/go.html?lat=%lat&lon=%long&z=%zoom"
     },
     {
       name: "MAPS.ME",
@@ -77,34 +105,6 @@ const mapData = {
       color: "#000000",
       exclusives: ["iOS"],
       url: "ge0://4em9c_cWiY/BINUS_%28Bina_Nusantara%29_University_Syahdan_Campus"
-    },
-    {
-      name: "Gojek",
-      icon: "assets/images/maps/gojek.png",
-      mask: true,
-      background: "#ffffff",
-      color: "#000000",
-      exclusives: ["Android", "iOS"],
-      url: "geo:%lat,%long?q=%lat,%long(%name)"
-    },
-    {
-      name: "Grab",
-      icon: "assets/images/maps/grab.png",
-      mask: true,
-      background: "#ffffff",
-      color: "#000000",
-      exclusives: ["Android", "iOS"],
-      url: "geo:%lat,%long?q=%lat,%long(%name)"
-    },
-    {
-      name: "OpenStreetMap",
-      icon: "assets/images/maps/openstreetmap.png",
-      mask: true,
-      background: "#7092ff",
-      color: "#000000",
-      osmType: "way",
-      osmId: "153306200",
-      url: "https://www.openstreetmap.org/%osmtype/%osmid"
     },
     {
       name: "Bing Maps",
@@ -129,6 +129,7 @@ const mapData = {
       mask: true,
       background: "#ffff00",
       color: "#ffffff",
+      exclusives: ["Android", "Linux", "macOS", "Windows"],
       url: "geo:%lat,%long?q=%lat,%long(%name)"
     }
   ]
@@ -140,12 +141,10 @@ marker.bindPopup(extractMapData(mapData), {"className": "custom-popup"}).openPop
 
 function extractMapData(obj){
   let initstring = "<h3>" + obj.name + "</h3><p>" + obj.address + "</p>";
-  initstring += "<h4>Open With:</h4><div class='menutilecontainer'>";
+  initstring += "<h4><a onClick='toggle(\"toggle1\", \"flex\")'>Open With...</a><h4><div class='menutilecontainer' id='toggle1' style='display:none'>";
 
-  let i;
-  for (i = 0; i < obj.maps.length; i++){
-    let map = obj.maps[i];
-    let url = map.url.replace("%zoom", obj.zoom)
+  function decodeParams(string){
+    return string.replace("%zoom", obj.zoom)
     .replace("%bingid", obj.data.bing.id)
     .replace("%osmtype", obj.data.osm.type)
     .replace("%osmid", obj.data.osm.id)
@@ -155,7 +154,12 @@ function extractMapData(obj){
     .replace("%long", obj.long)
     .replace("%name", encodeURIComponent(obj.name))
     .replace("%address", encodeURIComponent(obj.address));
+  }
 
+  let i;
+  for (i = 0; i < obj.maps.length; i++){
+    let map = obj.maps[i];
+    let url = decodeParams(map.url);
     if(map.exclusives && map.exclusives.length > 0){
       let j;
       for (j = 0; j < map.exclusives.length; j++){
@@ -167,13 +171,13 @@ function extractMapData(obj){
       initstring += appendList(map.name, url, map.icon, map.mask, map.color, map.background);
     }
   }
-  initstring += "</div><p>Some apps may need to be installed separately.</p>";
+  initstring += "</div>";
   return initstring;
 }
 
 function appendList(string, url, icon, masked, foreground, background){
   let mask = "";
-  if (masked === true){mask = "masked"};
+  if (masked === true){mask = "masked";}
   return "<div class='menutile' style='color:" + foreground + ";background-color:" + background + "'><a href='" + url + "' target='_blank' style='color:" + foreground + "'><img src='" + icon + "' alt='" + string + "' class='" + mask + "'><br><p>" + string + "</p></a></div>";
 }
 
@@ -202,3 +206,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 19,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
+
+function toggle(id, display){
+  let object = document.getElementById(id);
+  let state = display || "block";
+  if (object.style.display === "none"){
+    object.style.display = state;
+  } else {
+    object.style.display = "none";
+  }
+}
