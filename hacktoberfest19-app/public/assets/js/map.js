@@ -131,6 +131,15 @@ const mapData = {
       color: "#ffffff",
       exclusives: ["Android", "Linux", "macOS", "Windows"],
       url: "geo:%lat,%long?q=%lat,%long(%name)"
+    },
+    {
+      name: "More...",
+      icon: "assets/images/maps/more.png",
+      mask: true,
+      background: "#ffff00",
+      color: "#ffffff",
+      exclusives: ["iOS"],
+      url: "maps://?q=%lat,%long(%name)"
     }
   ]
 };
